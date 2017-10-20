@@ -77,6 +77,25 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     AdvancedDisplay
 
+# Radio
+PRODUCT_PACKAGES += \
+    libxml2 \
+    libprotobuf-cpp-full
+
+PRODUCT_PACKAGES += \
+    libsecril-client \
+    libsecril-client-sap \
+    modemloader
+
+PRODUCT_PACKAGES += \
+    SamsungServiceMode
+
+# IPv6
+PRODUCT_PACKAGES += \
+    ebtables \
+    ethertypes \
+    libebtc
+
 # WiFi
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/wifi/p2p_supplicant_overlay.conf:system/etc/wifi/p2p_supplicant_overlay.conf \
