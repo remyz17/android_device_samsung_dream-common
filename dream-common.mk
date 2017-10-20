@@ -104,6 +104,24 @@ PRODUCT_PACKAGES += \
     NfcNci \
     Tag
 
+# Audio
+PRODUCT_COPY_FILES += \
+    $(LOCAL_PATH)/configs/audio/audio_effects_sec.conf:system/etc/audio_effects_sec.conf \
+    $(LOCAL_PATH)/configs/audio/audio_policy.conf:system/etc/audio_policy.conf \
+    $(LOCAL_PATH)/configs/audio/mixer_gains.xml:system/etc/mixer_gains.xml \
+    $(LOCAL_PATH)/configs/audio/mixer_gains_r00.xml:system/etc/mixer_gains_r00.xml \
+    $(LOCAL_PATH)/configs/audio/mixer_paths.xml:system/etc/mixer_paths.xml \
+    $(LOCAL_PATH)/configs/audio/mixer_paths_r00.xml:system/etc/mixer_paths_r00.xml \
+    $(LOCAL_PATH)/configs/audio/mixer_paths_r01.xml:system/etc/mixer_paths_r01.xm \
+    $(LOCAL_PATH)/configs/audio/stage_policy.conf:system/etc/stage_policy.conf \
+
+PRODUCT_PACKAGES += \
+    audio.a2dp.default \
+    audio.usb.default \
+    audio.r_submix.default \
+    audio.primary.universal8895 \
+    libtinycompress
+
 # call Samsung SLSI board support package
 $(call inherit-product, hardware/samsung_slsi-cm/exynos5/exynos5.mk)
 $(call inherit-product, hardware/samsung_slsi-cm/exynos8895/exynos8895.mk)
