@@ -158,6 +158,12 @@ PRODUCT_COPY_FILES += \
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/keylayout/samsung.kl:system/usr/keylayout/samsung.kl
 
+# GPS
+PRODUCT_COPY_FILES += \
+    $(LOCAL_PATH)/configs/gps/gps.conf:system/etc/gps.conf \
+    $(LOCAL_PATH)/configs/gps/gps.xml:system/etc/gps.xml \
+    $(LOCAL_PATH)/configs/gps/lhd.conf:system/etc/lhd.conf
+
 # call Samsung SLSI board support package
 $(call inherit-product, hardware/samsung_slsi-cm/exynos5/exynos5.mk)
 $(call inherit-product, hardware/samsung_slsi-cm/exynos8895/exynos8895.mk)
