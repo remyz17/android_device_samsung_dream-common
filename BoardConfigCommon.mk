@@ -42,6 +42,9 @@ TARGET_2ND_CPU_VARIANT := cortex-a53.a57
 # Binder
 TARGET_USES_64_BIT_BINDER := true
 
+# CPUsets
+ENABLE_CPUSETS := true
+
 # Extracted with libbootimg
 BOARD_MKBOOTIMG_ARGS := --kernel_offset 0x00008000 --ramdisk_offset 0x01000000 --tags_offset 0x00000100
 BOARD_KERNEL_BASE := 0x10000000
@@ -118,6 +121,25 @@ BOARD_OVERRIDE_RS_CPU_VARIANT_64 := exynos-m1
 # Samsung Hardware
 BOARD_HARDWARE_CLASS += device/samsung/dream-common/cmhw
 BOARD_HARDWARE_CLASS += hardware/samsung/cmhw
+
+# HDMI
+BOARD_HDMI_INCAPABLE := true
+# FIMG2D
+BOARD_USES_SKIA_FIMGAPI := true
+# (G)SCALER
+BOARD_USES_SCALER := true
+# Samsung OpenMAX Video
+BOARD_USE_STOREMETADATA := true
+BOARD_USE_METADATABUFFERTYPE := true
+BOARD_USE_DMA_BUF := true
+BOARD_USE_ANB_OUTBUF_SHARE := true
+BOARD_USE_IMPROVED_BUFFER := true
+BOARD_USE_NON_CACHED_GRAPHICBUFFER := true
+BOARD_USE_GSC_RGB_ENCODER := true
+BOARD_USE_CSC_HW := false
+BOARD_USE_QOS_CTRL := false
+BOARD_USE_S3D_SUPPORT := true
+BOARD_USE_VP8ENC_SUPPORT := true
 
 # RIL
 BOARD_VENDOR := samsung
