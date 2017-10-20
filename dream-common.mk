@@ -60,6 +60,23 @@ PRODUCT_COPY_FILES += \
     frameworks/native/data/etc/com.nxp.mifare.xml:system/etc/permissions/com.nxp.mifare.xml \
     frameworks/native/data/etc/handheld_core_hardware.xml:system/etc/permissions/handheld_core_hardware.xml
 
+# Graphics
+PRODUCT_AAPT_CONFIG := xlarge large
+PRODUCT_AAPT_PREF_CONFIG := xxhdpi
+# A list of dpis to select prebuilt apk, in precedence order.
+PRODUCT_AAPT_PREBUILT_DPI := xxhdpi xhdpi hdpi
+
+PRODUCT_PACKAGES += \
+    gralloc.exynos5
+
+PRODUCT_PACKAGES += \
+    libion \
+    libfimg
+
+# hardware/samsung/AdvancedDisplay (MDNIE)
+PRODUCT_PACKAGES += \
+    AdvancedDisplay
+
 # call Samsung SLSI board support package
 $(call inherit-product, hardware/samsung_slsi-cm/exynos5/exynos5.mk)
 $(call inherit-product, hardware/samsung_slsi-cm/exynos8895/exynos8895.mk)
