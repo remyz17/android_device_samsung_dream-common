@@ -104,6 +104,21 @@ TARGET_AUDIOHAL_VARIANT := samsung
 TARGET_POWERHAL_VARIANT := samsung
 TARGET_SEC_FP_HAL_VARIANT := bauth
 
+# Samsung Camera
+BOARD_USE_SAMSUNG_CAMERAFORMAT_NV21 := true
+
+# Graphics
+USE_OPENGL_RENDERER := true
+NUM_FRAMEBUFFER_SURFACE_BUFFERS := 3
+
+# Renderscript
+BOARD_OVERRIDE_RS_CPU_VARIANT_32 := cortex-a53.a57
+BOARD_OVERRIDE_RS_CPU_VARIANT_64 := exynos-m1
+
+# Samsung Hardware
+BOARD_HARDWARE_CLASS += device/samsung/dream-common/cmhw
+BOARD_HARDWARE_CLASS += hardware/samsung/cmhw
+
 # RIL
 BOARD_VENDOR := samsung
 BOARD_MODEM_TYPE := ss333
