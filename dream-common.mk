@@ -15,3 +15,6 @@
 #
 
 LOCAL_PATH := device/samsung/dream-common
+
+PRODUCT_PACKAGES += \
+    dtbhtoolExynos
