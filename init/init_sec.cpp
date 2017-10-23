@@ -1,159 +1,140 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
-
-#define _REALLY_INCLUDE_SYS__SYSTEM_PROPERTIES_H_
-#include <sys/_system_properties.h>
+#include <android-base/properties.h>
 
 #include "log.h"
 #include "property_service.h"
 #include "util.h"
 #include "vendor_init.h"
 
-#include "init_sec.h"
+enum device_variant {
+    UNKNOWN = -1;
+    G950F,
+    G950S,
+    G950K,
+    G950L,
+    G950W8,
+    G955F,
+    G955S,
+    G955K,
+    G955L,
+    G955W8
+};
 
+namespace android {
+    namespace init {
 
-static std::string bootloader;
+        void vendor_load_properties() {
+            std::string platform = android::base::GetProperty("ro.board.platform", "");
+            std::string bootloader = android::base::GetProperty("ro.bootloader", "");
+                device_variant variant = UNKNOWN;
 
-static void property_override(char const prop[], char const value[]) {
-    prop_info *pi;
+            if (platform != ANDROID_TARGET) {
+                return;
+            }
 
-    pi = (prop_info*) __system_property_find(prop);
-    if (pi)
-        __system_property_update(pi, value, strlen(value));
-    else
-        __system_property_add(prop, strlen(prop), value, strlen(value));
-}
+            if (bootloader.find("G950F") != std::string::npos) {
+                variant = G950F;
+            } else if (bootloader.find("G950S") != std::string::npos) {
+                variant = G950S;
+            } else if (bootloader.find("G950K") != std::string::npos) {
+                variant = G950K;
+            } else if (bootloader.find("G950L") != std::string::npos) {
+                variant = G950L;
+            } else if (bootloader.find("G950W8") != std::string::npos) {
+                variant = G950W8;
+            } else if (bootloader.find("G955F") != std::string::npos) {
+                variant = G955F;
+            } else if (bootloader.find("G955S") != std::string::npos) {
+                variant = G955S;
+            } else if (bootloader.find("G955K") != std::string::npos) {
+                variant = G955K;
+            } else if (bootloader.find("G955L") != std::string::npos) {
+                variant = G955L;
+            } else if (bootloader.find("G955W8") != std::string::npos) {
+                variant = G955W8;
+            } else {
+                return;
+            }
 
-static device_variant parse_variant(std::string bl) {
-    device_variant ret = VARIANT_MAX;
+            switch (variant) {
+                case G950F:
+                    /* dreamltexx */
+                    android::base::SetProperty("ro.build.fingerprint", "samsung/dreamltexx/dreamlte:7.0/NRD90M/G950FXXU1AQH3:user/release-keys");
+                    android::base::SetProperty("description", "dreamltexx-user 7.0 NRD90M G950FXXU1AQH3 release-keys");
+                    android::base::SetProperty("model", "SM-G950F");
+                    android::base::SetProperty("device", "dreamltexx");
+                    break;
+                case G950S:
+                    /* dreamlteskt */
+                    android::base::SetProperty("fingerprint", "samsung/dreamlteskt/dreamlte:7.0/NRD90M/G950SXXU1AQH3:user/release-keys");
+                    android::base::SetProperty("description", "dreamlteskt-user 7.0 NRD90M G950SXXU1AQH3 release-keys");
+                    android::base::SetProperty("model", "SM-G950S");
+                    android::base::SetProperty("device", "dreamlteskt");
+                    break;
+                case G950K:
+                    /* dreamltektt */
+                    android::base::SetProperty("fingerprint", "samsung/dreamltektt/dreamlte:7.0/NRD90M/G950KXXU1AQH3:user/release-keys");
+                    android::base::SetProperty("description", "dreamltektt-user 7.0 NRD90M G950KXXU1AQH3 release-keys");
+                    android::base::SetProperty("model", "SM-G950K");
+                    android::base::SetProperty("device", "dreamltektt");
+                    break;
+                case G950L:
+                    /* dreamltelgt */
+                    android::base::SetProperty("fingerprint", "samsung/dreamltelgt/dreamlte:7.0/NRD90M/G950LXXU1AQH3:user/release-keys");
+                    android::base::SetProperty("description", "dreamltelgt-user 7.0 NRD90M G950LXXU1AQH3 release-keys");
+                    android::base::SetProperty("model", "SM-G950L");
+                    android::base::SetProperty("device", "dreamltelgt");
+                    break;
+                case G950W8:
+                    /* dreamltebmc */
+                    android::base::SetProperty("fingerprint", "samsung/dreamltebmc/dreamlte:7.0/NRD90M/G950W8XXU1AQH3:user/release-keys");
+                    android::base::SetProperty("description", "dreamltebmc-user 7.0 NRD90M G950W8XXU1AQH3 release-keys");
+                    android::base::SetProperty("model", "SM-G950W8");
+                    android::base::SetProperty("device", "dreamltebmc");
+                    break;
+                case G955F:
+                    /* dream2ltexx */
+                    android::base::SetProperty("fingerprint", "samsung/dream2ltexx/dream2lte:7.0/NRD90M/G955FXXU1AQH3:user/release-keys");
+                    android::base::SetProperty("description", "dream2ltexx-user 7.0 NRD90M G955FXXU1AQH3 release-keys");
+                    android::base::SetProperty("model", "SM-G955F");
+                    android::base::SetProperty("device", "dream2ltexx");
+                    break;
+                case G955S:
+                    /* dream2lteskt */
+                    android::base::SetProperty("fingerprint", "samsung/dream2lteskt/dream2lte:7.0/NRD90M/G955SXXU1AQH3:user/release-keys");
+                    android::base::SetProperty("description", "dream2lteskt-user 7.0 NRD90M G955SXXU1AQH3 release-keys");
+                    android::base::SetProperty("model", "SM-G955S");
+                    android::base::SetProperty("device", "dream2lteskt");
+                    break;
+                case G955K:
+                    /* dream2ltektt */
+                    android::base::SetProperty("fingerprint", "samsung/dream2ltektt/dream2lte:7.0/NRD90M/G955KXXU1AQH3:user/release-keys");
+                    android::base::SetProperty("description", "dream2ltektt-user 7.0 NRD90M G955KXXU1AQH3 release-keys");
+                    android::base::SetProperty("model", "SM-G955K");
+                    android::base::SetProperty("device", "dream2ltektt");
+                    break;
+                case G955L:
+                    /* dream2ltelgt */
+                    android::base::SetProperty("fingerprint", "samsung/dream2ltelgt/dream2lte:7.0/NRD90M/G955LXXU1AQH3:user/release-keys");
+                    android::base::SetProperty("description", "dream2ltelgt-user 7.0 NRD90M G955LXXU1AQH3 release-keys");
+                    android::base::SetProperty("model", "SM-G955L");
+                    android::base::SetProperty("device", "dream2ltelgt");
+                    break;
+                case G955W8:
+                    /* dream2ltebmc */
+                    android::base::SetProperty("fingerprint", "samsung/dream2ltebmc/dream2lte:7.0/NRD90M/G955W8XXU1AQH3:user/release-keys");
+                    android::base::SetProperty("description", "dream2ltebmc-user 7.0 NRD90M G955W8XXU1AQH3 release-keys");
+                    android::base::SetProperty("model", "SM-G955W8");
+                    android::base::SetProperty("device", "dream2ltebmc");
+                    break;
+                default:
+                    break;
+            }
 
-    if (bl.find("G950F") != std::string::npos)
-        ret = VARIANT_G950F;
-    else if (bl.find("G950S") != std::string::npos)
-        ret = VARIANT_G950S;
-    else if (bl.find("G950K") != std::string::npos)
-        ret = VARIANT_G950K;
-    else if (bl.find("G950L") != std::string::npos)
-        ret = VARIANT_G950L;
-    else if (bl.find("G950W8") != std::string::npos)
-        ret = VARIANT_G950W8;
-    else if (bl.find("G955F") != std::string::npos)
-        ret = VARIANT_G955F;
-    else if (bl.find("G955S") != std::string::npos)
-        ret = VARIANT_G955S;
-    else if (bl.find("G955K") != std::string::npos)
-        ret = VARIANT_G955K;
-    else if (bl.find("G955L") != std::string::npos)
-        ret = VARIANT_G955L;
-    else if (bl.find("G955W8") != std::string::npos)
-        ret = VARIANT_G955W8;
+            std::string device = android::base::GetProperty("ro.product.device", "");
+        }
 
-    return ret;
-}
-
-static device_variant get_variant_from_cmdline()
-{
-    bootloader = property_get("ro.bootloader");
-    device_variant ret = parse_variant(bootloader);
-
-    if (ret >= VARIANT_MAX) {
-        INFO("Unknown bootloader id: %s, forcing international (F) variant\n", bootloader.c_str());
-        if (bootloader.find("G950") != std::string::npos)
-            ret = VARIANT_G950F;
-        else
-            ret = VARIANT_G955F;
     }
-
-    return ret;
-}
-
-void vendor_load_properties()
-{
-    const device_variant variant = get_variant_from_cmdline();
-
-    std::string fingerprint, description, model, device;
-
-    switch (variant) {
-    case VARIANT_G950F:
-        /* dreamltexx */
-        fingerprint = "samsung/dreamltexx/dreamlte:7.0/NRD90M/G950FXXU1AQH3:user/release-keys";
-        description = "dreamltexx-user 7.0 NRD90M G950FXXU1AQH3 release-keys";
-        model = "SM-G950F";
-        device = "dreamltexx";
-        break;
-    case VARIANT_G950S:
-        /* dreamlteskt */
-        fingerprint = "samsung/dreamlteskt/dreamlte:7.0/NRD90M/G950SXXU1AQH3:user/release-keys";
-        description = "dreamlteskt-user 7.0 NRD90M G950SXXU1AQH3 release-keys";
-        model = "SM-G950S";
-        device = "dreamlteskt";
-        break;
-    case VARIANT_G950K:
-        /* dreamltektt */
-        fingerprint = "samsung/dreamltektt/dreamlte:7.0/NRD90M/G950KXXU1AQH3:user/release-keys";
-        description = "dreamltektt-user 7.0 NRD90M G950KXXU1AQH3 release-keys";
-        model = "SM-G950K";
-        device = "dreamltektt";
-        break;
-    case VARIANT_G950L:
-        /* dreamltelgt */
-        fingerprint = "samsung/dreamltelgt/dreamlte:7.0/NRD90M/G950LXXU1AQH3:user/release-keys";
-        description = "dreamltelgt-user 7.0 NRD90M G950LXXU1AQH3 release-keys";
-        model = "SM-G950L";
-        device = "dreamltelgt";
-        break;
-    case VARIANT_G950W8:
-        /* dreamltebmc */
-        fingerprint = "samsung/dreamltebmc/dreamlte:7.0/NRD90M/G950W8XXU1AQH3:user/release-keys";
-        description = "dreamltebmc-user 7.0 NRD90M G950W8XXU1AQH3 release-keys";
-        model = "SM-G950W8";
-        device = "dreamltebmc";
-        break;
-    case VARIANT_G955F:
-        /* dream2ltexx */
-        fingerprint = "samsung/dream2ltexx/dream2lte:7.0/NRD90M/G955FXXU1AQH3:user/release-keys";
-        description = "dream2ltexx-user 7.0 NRD90M G955FXXU1AQH3 release-keys";
-        model = "SM-G955F";
-        device = "dream2ltexx";
-        break;
-    case VARIANT_G955S:
-        /* dream2lteskt */
-        fingerprint = "samsung/dream2lteskt/dream2lte:7.0/NRD90M/G955SXXU1AQH3:user/release-keys";
-        description = "dream2lteskt-user 7.0 NRD90M G955SXXU1AQH3 release-keys";
-        model = "SM-G955S";
-        device = "dream2lteskt";
-        break;
-    case VARIANT_G955K:
-        /* dream2ltektt */
-        fingerprint = "samsung/dream2ltektt/dream2lte:7.0/NRD90M/G955KXXU1AQH3:user/release-keys";
-        description = "dream2ltektt-user 7.0 NRD90M G955KXXU1AQH3 release-keys";
-        model = "SM-G955K";
-        device = "dream2ltektt";
-        break;
-    case VARIANT_G955L:
-        /* dream2ltelgt */
-        fingerprint = "samsung/dream2ltelgt/dream2lte:7.0/NRD90M/G955LXXU1AQH3:user/release-keys";
-        description = "dream2ltelgt-user 7.0 NRD90M G955LXXU1AQH3 release-keys";
-        model = "SM-G955L";
-        device = "dream2ltelgt";
-        break;
-    case VARIANT_G955W8:
-        /* dream2ltebmc */
-        fingerprint = "samsung/dream2ltebmc/dream2lte:7.0/NRD90M/G955W8XXU1AQH3:user/release-keys";
-        description = "dream2ltebmc-user 7.0 NRD90M G955W8XXU1AQH3 release-keys";
-        model = "SM-G955W8";
-        device = "dream2ltebmc";
-        break;
-    default:
-        break;
-    }
-
-    INFO("Found bootloader id: %s setting build properties for: %s device\n", bootloader.c_str(), device.c_str());
-
-    property_override("ro.build.fingerprint", fingerprint.c_str());
-    property_override("ro.build.description", description.c_str());
-    property_override("ro.build.product", device.c_str());
-    property_override("ro.product.model", model.c_str());
-    property_override("ro.product.device", device.c_str());
 }
