@@ -164,6 +164,9 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/gps/gps.xml:system/etc/gps.xml \
     $(LOCAL_PATH)/configs/gps/lhd.conf:system/etc/lhd.conf
 
+# System properties
+include $(LOCAL_PATH)/system_prop.mk
+
 # call Samsung SLSI board support package
 $(call inherit-product, hardware/samsung_slsi-cm/exynos5/exynos5.mk)
 $(call inherit-product, hardware/samsung_slsi-cm/exynos8895/exynos8895.mk)
