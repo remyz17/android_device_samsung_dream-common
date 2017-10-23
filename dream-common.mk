@@ -22,6 +22,22 @@ PRODUCT_PACKAGES += \
 # Overlays
 DEVICE_PACKAGE_OVERLAYS += $(LOCAL_PATH)/overlay
 
+# Ramdisk
+PRODUCT_PACKAGES += \
+    fstab.samsungexynos8895 \
+    init.baseband.rc \
+    init.bluetooth.rc \
+    init.gps.rc \
+    init.power.rc \
+    init.rilchip.rc \
+    init.rilcommon.rc \
+    init.samsung.rc \
+    init.samsungexynos8895.rc \
+    init.samsungexynos8895.usb.rc \
+    init.usb.configfs.rc \
+    init.wifi.rc \
+    ueventd.samsungexynos8895.rc
+
 # Permissions
 PRODUCT_COPY_FILES += \
     frameworks/native/data/etc/android.hardware.audio.low_latency.xml:system/etc/permissions/android.hardware.audio.low_latency.xml \
