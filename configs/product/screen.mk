@@ -14,14 +14,8 @@
 # limitations under the License.
 #
 
-LOCAL_PATH := device/samsung/dream-common
-
-# include splitted configs
--include $(LOCAL_PATH)/configs/product/*.mk
-
-# call Samsung SLSI board support package
-$(call inherit-product, hardware/samsung_slsi-cm/exynos5/exynos5.mk)
-$(call inherit-product, hardware/samsung_slsi-cm/exynos8895/exynos8895.mk)
-
-# call the proprietary setup
-$(call inherit-product, vendor/samsung/dream-common/dream-common-vendor.mk)
+# screen
+PRODUCT_AAPT_CONFIG := xlarge large
+PRODUCT_AAPT_PREF_CONFIG := xxhdpi
+# A list of dpis to select prebuilt apk, in precedence order.
+PRODUCT_AAPT_PREBUILT_DPI := xxhdpi xhdpi hdpi

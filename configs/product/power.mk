@@ -14,14 +14,7 @@
 # limitations under the License.
 #
 
-LOCAL_PATH := device/samsung/dream-common
-
-# include splitted configs
--include $(LOCAL_PATH)/configs/product/*.mk
-
-# call Samsung SLSI board support package
-$(call inherit-product, hardware/samsung_slsi-cm/exynos5/exynos5.mk)
-$(call inherit-product, hardware/samsung_slsi-cm/exynos8895/exynos8895.mk)
-
-# call the proprietary setup
-$(call inherit-product, vendor/samsung/dream-common/dream-common-vendor.mk)
+# Power
+PRODUCT_PACKAGES += \
+    power.universal8895 \
+    android.hardware.power@1.0-impl

@@ -14,14 +14,19 @@
 # limitations under the License.
 #
 
-LOCAL_PATH := device/samsung/dream-common
+# Graphics
+PRODUCT_PACKAGES += \
+    gralloc.exynos5 \
+    libhwc2on1adapter \
+    android.hardware.graphics.allocator@2.0-impl \
+    android.hardware.graphics.allocator@2.0-service \
+    android.hardware.graphics.composer@2.1-impl \
+    android.hardware.graphics.mapper@2.0-impl
 
-# include splitted configs
--include $(LOCAL_PATH)/configs/product/*.mk
+# RenderScript HAL
+PRODUCT_PACKAGES += \
+    android.hardware.renderscript@1.0-impl
 
-# call Samsung SLSI board support package
-$(call inherit-product, hardware/samsung_slsi-cm/exynos5/exynos5.mk)
-$(call inherit-product, hardware/samsung_slsi-cm/exynos8895/exynos8895.mk)
-
-# call the proprietary setup
-$(call inherit-product, vendor/samsung/dream-common/dream-common-vendor.mk)
+# DRM
+PRODUCT_PACKAGES += \
+     android.hardware.drm@1.0-impl
