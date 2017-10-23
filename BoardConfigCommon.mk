@@ -159,3 +159,6 @@ RED_LED_PATH := "/sys/class/leds/led_r/brightness"
 GREEN_LED_PATH := "/sys/class/leds/led_g/brightness"
 BLUE_LED_PATH := "/sys/class/leds/led_b/brightness"
 BACKLIGHT_PATH := "/sys/class/backlight/panel/brightness"
+
+# Seccomp filters
+BOARD_SECCOMP_POLICY += $(LOCAL_PATH)/seccomp
