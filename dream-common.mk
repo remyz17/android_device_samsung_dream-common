@@ -164,6 +164,11 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/gps/gps.xml:system/etc/gps.xml \
     $(LOCAL_PATH)/configs/gps/lhd.conf:system/etc/lhd.conf
 
+# Fingerprint
+PRODUCT_PACKAGES += \
+    fingerprintd \
+    fingerprint.exynos5
+
 # Power
 PRODUCT_PACKAGES += \
     power.universal8895
