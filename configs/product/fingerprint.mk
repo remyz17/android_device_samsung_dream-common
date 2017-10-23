@@ -16,6 +16,6 @@
 
 # Fingerprint
 PRODUCT_PACKAGES += \
-    fingerprintd \
     fingerprint.exynos5 \
+    android.hardware.biometrics.fingerprint@2.1-impl \
     android.hardware.biometrics.fingerprint@2.1-service

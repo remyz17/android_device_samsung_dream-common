@@ -905,12 +905,6 @@ service vcsFPService /system/bin/vcsFPService
     user system
     group system
 
-# FINGERPRINT FRAMEWORK : starts fingerprintd
-service fingerprintd /system/bin/fingerprintd
-    class late_start
-    user system
-    group system
-
 # faced
 service faced /system/bin/faced
     class late_start
