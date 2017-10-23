@@ -1,0 +1,5 @@
+# read DS/SS property
+import /efs/factory.prop
+
+# boot device
+ro.boot.bootdevice=11120000.ufs

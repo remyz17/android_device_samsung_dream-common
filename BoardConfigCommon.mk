@@ -122,6 +122,12 @@ BOARD_OVERRIDE_RS_CPU_VARIANT_64 := exynos-m1
 BOARD_HARDWARE_CLASS += device/samsung/dream-common/cmhw
 BOARD_HARDWARE_CLASS += hardware/samsung/cmhw
 
+# Init
+TARGET_INIT_VENDOR_LIB := libinit_sec
+
+# Properties
+TARGET_SYSTEM_PROP := device/samsung/dream-common/system.prop
+
 # HDMI
 BOARD_HDMI_INCAPABLE := true
 # FIMG2D
