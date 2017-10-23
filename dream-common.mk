@@ -164,6 +164,14 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/gps/gps.xml:system/etc/gps.xml \
     $(LOCAL_PATH)/configs/gps/lhd.conf:system/etc/lhd.conf
 
+# Power
+PRODUCT_PACKAGES += \
+    power.universal8895
+
+# Lights
+PRODUCT_PACKAGES += \
+    lights.universal8895
+
 # System properties
 include $(LOCAL_PATH)/system_prop.mk
 
