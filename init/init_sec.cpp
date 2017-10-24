@@ -9,7 +9,7 @@
 #include "vendor_init.h"
 
 enum device_variant {
-    UNKNOWN = -1;
+    UNKNOWN = -1,
     G950F,
     G950S,
     G950K,
