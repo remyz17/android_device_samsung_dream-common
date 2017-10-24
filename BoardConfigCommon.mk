@@ -119,8 +119,8 @@ BOARD_OVERRIDE_RS_CPU_VARIANT_32 := cortex-a53.a57
 BOARD_OVERRIDE_RS_CPU_VARIANT_64 := exynos-m1
 
 # Samsung Hardware
-BOARD_HARDWARE_CLASS += device/samsung/dream-common/cmhw
-BOARD_HARDWARE_CLASS += hardware/samsung/cmhw
+BOARD_HARDWARE_CLASS += device/samsung/dream-common/lineagehw
+BOARD_HARDWARE_CLASS += hardware/samsung/lineagehw
 
 # Init
 TARGET_INIT_VENDOR_LIB := libinit_sec
