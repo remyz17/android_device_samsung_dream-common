@@ -22,10 +22,12 @@ PRODUCT_PACKAGES += \
     init.gps.rc \
     init.power.rc \
     init.rilchip.rc \
-    init.rilcommon.rc \
+    init.recovery.usb.rc \
     init.samsung.rc \
     init.samsungexynos8895.rc \
     init.samsungexynos8895.usb.rc \
     init.usb.configfs.rc \
+    init.usb.rc \
     init.wifi.rc \
+    loggy.sh \
     ueventd.samsungexynos8895.rc

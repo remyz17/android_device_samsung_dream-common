@@ -15,15 +15,11 @@
 #
 
 # Audio
-PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/configs/audio/audio_effects_sec.conf:system/etc/audio_effects_sec.conf \
-    $(LOCAL_PATH)/configs/audio/audio_policy.conf:system/etc/audio_policy.conf \
-    $(LOCAL_PATH)/configs/audio/mixer_gains.xml:system/etc/mixer_gains.xml \
-    $(LOCAL_PATH)/configs/audio/mixer_gains_r00.xml:system/etc/mixer_gains_r00.xml \
-    $(LOCAL_PATH)/configs/audio/mixer_paths.xml:system/etc/mixer_paths.xml \
-    $(LOCAL_PATH)/configs/audio/mixer_paths_r00.xml:system/etc/mixer_paths_r00.xml \
-    $(LOCAL_PATH)/configs/audio/mixer_paths_r01.xml:system/etc/mixer_paths_r01.xm \
-    $(LOCAL_PATH)/configs/audio/stage_policy.conf:system/etc/stage_policy.conf \
+#PRODUCT_COPY_FILES += \
+#    $(LOCAL_PATH)/configs/audio/audio_policy.conf:$(TARGET_COPY_OUT_VENDOR)/etc/audio_policy.conf \
+#    $(LOCAL_PATH)/configs/audio/mixer_gains.xml:$(TARGET_COPY_OUT_VENDOR)/etc/mixer_gains.xml \
+#    $(LOCAL_PATH)/configs/audio/mixer_paths.xml:$(TARGET_COPY_OUT_VENDOR)/etc/mixer_paths.xml \
+#    $(LOCAL_PATH)/configs/audio/mixer_paths_0.xml:$(TARGET_COPY_OUT_VENDOR)/etc/mixer_paths_0.xml
 
 PRODUCT_PACKAGES += \
     audio.a2dp.default \

@@ -14,8 +14,6 @@
 # limitations under the License.
 #
 
-# Sensorhub
+# Gatekeeper
 PRODUCT_PACKAGES += \
-    $(LOCAL_PATH)/configs/sensors/hals.conf:$(TARGET_COPY_OUT_VENDOR)/etc/sensors/hals.conf \
-    android.hardware.sensors@1.0-impl \
-    android.hardware.vibrator@1.0-impl
+    gatekeeper.exynos8895

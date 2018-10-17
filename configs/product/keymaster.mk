@@ -14,8 +14,8 @@
 # limitations under the License.
 #
 
-# Sensorhub
+# Keymaster
 PRODUCT_PACKAGES += \
-    $(LOCAL_PATH)/configs/sensors/hals.conf:$(TARGET_COPY_OUT_VENDOR)/etc/sensors/hals.conf \
-    android.hardware.sensors@1.0-impl \
-    android.hardware.vibrator@1.0-impl
+    keystore.exynos5 \
+    android.hardware.keymaster@3.0-impl \
+    android.hardware.keymaster@3.0-service
