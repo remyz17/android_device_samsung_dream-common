@@ -58,8 +58,6 @@
 	<ctl name="ABOX SPUM ASRC1" value="On" />
 	<ctl name="ABOX SPUM ASRC2" value="On" />
 	<ctl name="ABOX SPUM ASRC3" value="On" />
-	<ctl name="ABOX RECP PIFS0" value="0" />
-	<ctl name="ABOX RECP PIFS1" value="0" />
 
 	<ctl name="ABOX SIFM0" value="WDMA" />
 	<ctl name="ABOX SIFM1" value="WDMA" />
@@ -104,20 +102,6 @@
 
 	<ctl name="DMIC1 Switch" value="0" />
 	<ctl name="DMIC2 Switch" value="0" />
-	<ctl name="AUXPDM Switch" value="0" />
-	<ctl name="AUXPDM1 Output Switch" value="0" />
-	<ctl name="AUXPDM1 Rate" value="2.048Mhz" />
-
-	<ctl name="VTS DMIC SEL" value="DPDM" />
-	<ctl name="VTS DMIC IF RCH EN" value="0" />
-	<ctl name="VTS DMIC IF LCH EN" value="0" />
-	<ctl name="VTS SYS SEL" value="512kHz" />
-	<ctl name="VTS HPF EN" value="0" />
-	<ctl name="VTS HPF SEL" value="120Hz" />
-	<ctl name="VTS Execution Mode" value="OFF" />
-	<ctl name="VTS VoiceRecognize Start" value="Off" />
-	<ctl name="VTS Virtual Output Mux" value="None" />
-	<ctl name="VTS Enable" value="0" />
 
 	<!-- EQs Filter setting -->
 	<ctl name="EQ1 Coefficients" value="0 0 15 205 4 3 0 204 14 93 253 229 4 10 55 7 9 220 1 12 4 78 63 93 14 133 249 250 4 10 39 131 4 219 5 55 64 0 0 0" />
@@ -187,28 +171,24 @@
 		<ctl name="ABOX Sampling Rate Out2" value="8000" />
 		<ctl name="ABOX Sampling Rate Inmux0" value="8000" />
 		<ctl name="ABOX Sampling Rate Inmux1" value="8000" />
-		<ctl name="ABOX Sampling Rate Recp" value="8000" />
 	</path>
 
 	<path name="set-bt-sco-tx-rate-nb">
 		<ctl name="ABOX Sampling Rate Out2" value="8000" />
 		<ctl name="ABOX Sampling Rate Inmux0" value="8000" />
 		<ctl name="ABOX Sampling Rate Inmux1" value="8000" />
-		<ctl name="ABOX Sampling Rate Recp" value="8000" />
 	</path>
 
 	<path name="set-bt-sco-rx-rate-wb">
 		<ctl name="ABOX Sampling Rate Out2" value="16000" />
 		<ctl name="ABOX Sampling Rate Inmux0" value="16000" />
 		<ctl name="ABOX Sampling Rate Inmux1" value="16000" />
-		<ctl name="ABOX Sampling Rate Recp" value="16000" />
 	</path>
 
 	<path name="set-bt-sco-tx-rate-wb">
 		<ctl name="ABOX Sampling Rate Out2" value="16000" />
 		<ctl name="ABOX Sampling Rate Inmux0" value="16000" />
 		<ctl name="ABOX Sampling Rate Inmux1" value="16000" />
-		<ctl name="ABOX Sampling Rate Recp" value="16000" />
 	</path>
 
 	<!-- Set uhqa sampling rate -->
@@ -230,45 +210,21 @@
 
 	<!-- incall recording setting -->
 	<path name="incall-rec-uplink">
-		<ctl name="ABOX RSRC0" value="SIFS0" />
-		<ctl name="ABOX RSRC1" value="NSRC1" />
-		<ctl name="ABOX RECP PIFS0" value="0" />
-		<ctl name="ABOX RECP PIFS1" value="1" />
 	</path>
 
 	<path name="incall-rec-downlink">
-		<ctl name="ABOX RSRC0" value="SIFS0" />
-		<ctl name="ABOX RSRC1" value="NSRC1" />
-		<ctl name="ABOX RECP PIFS0" value="1" />
-		<ctl name="ABOX RECP PIFS1" value="0" />
 	</path>
 
 	<path name="incall-rec-uplink-and-downlink">
-		<ctl name="ABOX RSRC0" value="SIFS0" />
-		<ctl name="ABOX RSRC1" value="NSRC1" />
-		<ctl name="ABOX RECP PIFS0" value="1" />
-		<ctl name="ABOX RECP PIFS1" value="1" />
 	</path>
 
 	<path name="incall-rec-uplink-bt-sco">
-		<ctl name="ABOX RSRC0" value="SIFS2" />
-		<ctl name="ABOX RSRC1" value="NSRC1" />
-		<ctl name="ABOX RECP PIFS0" value="0" />
-		<ctl name="ABOX RECP PIFS1" value="1" />
 	</path>
 
 	<path name="incall-rec-downlink-bt-sco">
-		<ctl name="ABOX RSRC0" value="SIFS2" />
-		<ctl name="ABOX RSRC1" value="NSRC1" />
-		<ctl name="ABOX RECP PIFS0" value="1" />
-		<ctl name="ABOX RECP PIFS1" value="0" />
 	</path>
 
 	<path name="incall-rec-uplink-and-downlink-bt-sco">
-		<ctl name="ABOX RSRC0" value="SIFS2" />
-		<ctl name="ABOX RSRC1" value="NSRC1" />
-		<ctl name="ABOX RECP PIFS0" value="1" />
-		<ctl name="ABOX RECP PIFS1" value="1" />
 	</path>
 
 	<!-- output device -->
@@ -864,6 +820,23 @@
 		<path name="incall_nb-headset" />
 	</path>
 
+	<!-- Realtime Loopback -->
+	<path name="realtimeloopback-handset">
+		<path name="media-handset" />
+	</path>
+
+	<path name="realtimeloopback-speaker">
+		<path name="media-speaker" />
+	</path>
+
+	<path name="realtimeloopback-headset">
+		<path name="media-headset" />
+	</path>
+
+	<path name="realtimeloopback-bt-sco-headset">
+		<path name="media-bt-sco-headset" />
+	</path>
+
 	<!-- TTY Mode -->
 	<path name="tty_mode-handset">
 		<path name="incall_nb-handset" />
@@ -941,10 +914,6 @@
 		<ctl name="ABOX SPUS OUT4" value="SIFS2" />
 		<ctl name="ABOX SIFS2" value="SPUS OUT4" />
 		<ctl name="ABOX UAIF SPK2" value="SIFS2" />
-		<ctl name="ABOX RECP PIFS0" value="1" />
-		<ctl name="ABOX RECP PIFS1" value="1" />
-		<ctl name="ABOX RSRC0" value="SIFS2" />
-		<ctl name="ABOX RSRC1" value="NSRC1" />
 	</path>
 	<!-- end of Spectro Scenario -->
 
@@ -1045,76 +1014,19 @@
 
 	<!-- lpsd control input -->
 	<path name="lpsd_control-mic">
-		<ctl name="VTS DMIC SEL" value="DPDM" />
-		<ctl name="VTS DMIC IF RCH EN" value="1" />
-		<ctl name="VTS DMIC IF LCH EN" value="1" />
-		<ctl name="VTS SYS SEL" value="768kHz" />
-		<ctl name="VTS HPF EN" value="1" />
-		<ctl name="VTS HPF SEL" value="40Hz" />
-		<ctl name="VTS Execution Mode" value="SOUND_DETECT_MODE" />
-		<ctl name="VTS VoiceRecognize Start" value="On" />
-		<ctl name="DMIC1 Switch" value="1" />
-		<ctl name="VTS Virtual Output Mux" value="DMIC1" />
-		<ctl name="VTS Enable" value="1" />
 	</path>
 
 	<!-- voice control input -->
 	<path name="voice_control-mic">
-		<ctl name="VTS DMIC SEL" value="DPDM" />
-		<ctl name="VTS DMIC IF RCH EN" value="1" />
-		<ctl name="VTS DMIC IF LCH EN" value="1" />
-		<ctl name="VTS SYS SEL" value="768kHz" />
-		<ctl name="VTS HPF EN" value="1" />
-		<ctl name="VTS HPF SEL" value="40Hz" />
-		<ctl name="VTS Active Keyphrase" value="SVOICE" />
-		<ctl name="VTS Execution Mode" value="VOICE_TRIGGER_MODE" />
-		<ctl name="VTS VoiceRecognize Start" value="On" />
-		<ctl name="DMIC1 Switch" value="1" />
-		<ctl name="VTS Virtual Output Mux" value="DMIC1" />
-		<ctl name="VTS Enable" value="1" />
 	</path>
 
 	<path name="voice_control-headset-mic">
-		<ctl name="AUXPDM1 Rate" value="768khz" />
-		<ctl name="AUXPDM1 Input" value="IN1L" />
-		<ctl name="AUXPDM1 Output Switch" value="1" />
-		<ctl name="AUXPDM Switch" value="1" />
-		<ctl name="VTS DMIC SEL" value="APDM" />
-		<ctl name="VTS DMIC IF RCH EN" value="1" />
-		<ctl name="VTS DMIC IF LCH EN" value="1" />
-		<ctl name="VTS SYS SEL" value="768kHz" />
-		<ctl name="VTS HPF EN" value="1" />
-		<ctl name="VTS HPF SEL" value="40Hz" />
-		<ctl name="VTS Active Keyphrase" value="SVOICE" />
-		<ctl name="VTS Execution Mode" value="VOICE_TRIGGER_MODE" />
-		<ctl name="VTS VoiceRecognize Start" value="On" />
-		<ctl name="VTS Enable" value="1" />
-		<ctl name="MICBias Bypass Mode" value="0" />
 	</path>
 
 	<path name="vts_recording-mic">
-		<ctl name="VTS DMIC SEL" value="DPDM" />
-		<ctl name="VTS DMIC IF RCH EN" value="1" />
-		<ctl name="VTS DMIC IF LCH EN" value="1" />
-		<ctl name="VTS SYS SEL" value="768kHz" />
-		<ctl name="VTS HPF EN" value="1" />
-		<ctl name="VTS HPF SEL" value="40Hz" />
-		<ctl name="DMIC1 Switch" value="1" />
-		<ctl name="VTS Virtual Output Mux" value="DMIC1" />
 	</path>
 
 	<path name="vts_recording-headset-mic">
-		<ctl name="AUXPDM1 Rate" value="768khz" />
-		<ctl name="AUXPDM1 Input" value="IN1L" />
-		<ctl name="AUXPDM1 Output Switch" value="1" />
-		<ctl name="AUXPDM Switch" value="1" />
-		<ctl name="VTS DMIC SEL" value="APDM" />
-		<ctl name="VTS DMIC IF RCH EN" value="1" />
-		<ctl name="VTS DMIC IF LCH EN" value="1" />
-		<ctl name="VTS SYS SEL" value="768kHz" />
-		<ctl name="VTS HPF EN" value="1" />
-		<ctl name="VTS HPF SEL" value="40Hz" />
-		<ctl name="MICBias Bypass Mode" value="0" />
 	</path>
 
 	<!-- voice_control_with_okgoogle input -->
@@ -1913,6 +1825,23 @@
 		<path name="dev-dual-invert-mic" />
 	</path>
 
+	<!-- Realtime Loopback Input -->
+	<path name="realtimeloopback-mic">
+		<path name="media-mic" />
+	</path>
+
+	<path name="realtimeloopback-2nd-mic">
+		<path name="media-2nd-mic" />
+	</path>
+
+	<path name="realtimeloopback-headset-mic">
+		<path name="media-headset-mic" />
+	</path>
+
+	<path name="realtimeloopback-bt-sco-headset-in">
+		<path name="media-bt-sco-headset-in" />
+	</path>
+
 	<!-- TTY Mode Input -->
 	<path name="tty_mode-vco-mic">
 		<path name="route-cp-tx" />
@@ -1965,8 +1894,6 @@
 		<ctl name="ABOX SPUS OUT4" value="SIFS2" />
 		<ctl name="ABOX SIFS2" value="SPUS OUT4" />
 		<ctl name="ABOX UAIF SPK2" value="SIFS2" />
-		<ctl name="ABOX RECP PIFS0" value="1" />
-		<ctl name="ABOX RSRC0" value="SIFS2" />
 	</path>
 
 	<path name="call_forwarding_slave-handset-mic">
@@ -1995,14 +1922,8 @@
 
 	<!-- One byte control -->
 	<path name="seamless_buf_offset">
-		<ctl name="VTS VoiceTrigger Value" id="0"/>
 	</path>
 
 	<path name="codec_rx_mute">
-		<param name="HPOUT2 Digital Switch" id="0" />
-		<param name="HPOUT2 Digital Switch" id="1" />
-		<param name="HPOUT3 Digital Switch" id="0" />
-		<param name="HPOUT3 Digital Switch" id="1" />
-		<param name="SPK Enable Switch" id="0" />
 	</path>
 </mixer>

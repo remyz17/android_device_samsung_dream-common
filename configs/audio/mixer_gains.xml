@@ -544,8 +544,8 @@
 
 	<!-- Loopback (no delay) volume -->
 	<path name="gain-loopback-headset">
-		<ctl name="HPOUT2L Impedance Volume" value="110" />
-		<ctl name="HPOUT2R Impedance Volume" value="110" />
+		<ctl name="HPOUT2L Impedance Volume" value="120" />
+		<ctl name="HPOUT2R Impedance Volume" value="120" />
 		<ctl name="HPOUT2L Input 1 Volume" value="32" />
 		<ctl name="HPOUT2R Input 1 Volume" value="32" />
 	</path>
@@ -560,10 +560,29 @@
 	</path>
 
 	<path name="gain-loopback_packet-headset">
-		<ctl name="HPOUT2L Impedance Volume" value="112" />
-		<ctl name="HPOUT2R Impedance Volume" value="112" />
+		<ctl name="HPOUT2L Impedance Volume" value="106" />
+		<ctl name="HPOUT2R Impedance Volume" value="106" />
 		<ctl name="HPOUT2L Input 1 Volume" value="32" />
 		<ctl name="HPOUT2R Input 1 Volume" value="32" />
+	</path>
+
+	<!-- Realtime Loopback output volume-->
+	<path name="gain-realtimeloopback-handset">
+		<ctl name="HPOUT3L Input 1 Volume" value="28" />
+		<ctl name="HPOUT3R Input 1 Volume" value="28" />
+	</path>
+
+	<path name="gain-realtimeloopback-speaker">
+	</path>
+
+	<path name="gain-realtimeloopback-headset">
+		<ctl name="HPOUT2L Impedance Volume" value="107" />
+		<ctl name="HPOUT2R Impedance Volume" value="107" />
+		<ctl name="HPOUT2L Input 1 Volume" value="32" />
+		<ctl name="HPOUT2R Input 1 Volume" value="32" />
+	</path>
+
+	<path name="gain-realtimeloopback-bt-sco-headset">
 	</path>
 
 	<!-- TTY Mode volume-->
@@ -667,7 +686,7 @@
 
 	<path name="gain-media-2nd-mic">
 		<ctl name="IN2L Volume" value="0" />
-		<ctl name="IN2L Digital Volume" value="122" />
+		<ctl name="IN2L Digital Volume" value="125" />
 	</path>
 
 	<path name="gain-media-headset-mic">
@@ -704,25 +723,25 @@
 	</path>
 
 	<path name="gain-camcorder-headphone-mic">
-		<ctl name="IN3L Digital Volume" value="145" />
+		<ctl name="IN3L Digital Volume" value="124" />
 		<ctl name="IN2L Volume" value="0" />
-		<ctl name="IN2L Digital Volume" value="145" />
+		<ctl name="IN2L Digital Volume" value="124" />
 	</path>
 
 	<!-- voice recording input volume -->
 	<path name="gain-recording-mic">
-		<ctl name="IN3L Digital Volume" value="122" />
+		<ctl name="IN3L Digital Volume" value="125" />
 	</path>
 
 	<path name="gain-recording-2nd-mic">
 		<ctl name="IN2L Volume" value="0" />
-		<ctl name="IN2L Digital Volume" value="122" />
+		<ctl name="IN2L Digital Volume" value="125" />
 	</path>
 
 	<path name="gain-recording-dualmic">
-		<ctl name="IN3L Digital Volume" value="122" />
+		<ctl name="IN3L Digital Volume" value="125" />
 		<ctl name="IN2L Volume" value="0" />
-		<ctl name="IN2L Digital Volume" value="122" />
+		<ctl name="IN2L Digital Volume" value="125" />
 	</path>
 
 	<path name="gain-recording-headset-mic">
@@ -731,7 +750,7 @@
 	</path>
 
 	<path name="gain-recording-headphone-mic">
-		<ctl name="IN3L Digital Volume" value="145" />
+		<ctl name="IN3L Digital Volume" value="125" />
 	</path>
 
 	<path name="gain-recording-bt-sco-headset-in">
@@ -751,9 +770,9 @@
 
 	<!-- interview input volume -->
 	<path name="gain-interview-mic">
-		<ctl name="IN3L Digital Volume" value="147" />
+		<ctl name="IN3L Digital Volume" value="154" />
 		<ctl name="IN2L Volume" value="0" />
-		<ctl name="IN2L Digital Volume" value="147" />
+		<ctl name="IN2L Digital Volume" value="154" />
 	</path>
 
 	<!-- meeting input volume -->
@@ -799,7 +818,7 @@
 
 	<path name="gain-recognition-2nd-mic">
 		<ctl name="IN2L Volume" value="0" />
-		<ctl name="IN2L Digital Volume" value="122" />
+		<ctl name="IN2L Digital Volume" value="125" />
 	</path>
 
 	<path name="gain-recognition-headset-mic">
@@ -833,7 +852,7 @@
 	<path name="gain-bargein_external_engine-mic">
 		<ctl name="IN3L Digital Volume" value="118" />
 		<ctl name="IN2L Volume" value="0" />
-		<ctl name="IN2L Digital Volume" value="162" />
+		<ctl name="IN2L Digital Volume" value="160" />
 	</path>
 
 	<path name="gain-bargein_external_engine-headset-mic">
@@ -928,7 +947,7 @@
 	</path>
 
 	<path name="gain-samsung_voip-headset-mic">
-		<ctl name="IN1L Volume" value="31" />
+		<ctl name="IN1L Volume" value="20" />
 		<ctl name="IN1L Digital Volume" value="128" />
 	</path>
 
@@ -962,7 +981,7 @@
 	</path>
 
 	<path name="gain-samsung_voip_fmc-headset-mic">
-		<ctl name="IN1L Volume" value="31" />
+		<ctl name="IN1L Volume" value="20" />
 		<ctl name="IN1L Digital Volume" value="128" />
 	</path>
 
@@ -1505,12 +1524,12 @@
 
 	<!-- Loopback Input (no delay) -->
 	<path name="gain-loopback-mic">
-		<ctl name="IN3L Digital Volume" value="126" />
+		<ctl name="IN3L Digital Volume" value="116" />
 	</path>
 
 	<path name="gain-loopback-2nd-mic">
 		<ctl name="IN2L Volume" value="0" />
-		<ctl name="IN2L Digital Volume" value="132" />
+		<ctl name="IN2L Digital Volume" value="122" />
 	</path>
 
 	<!-- Packet Loopback Input -->
@@ -1520,11 +1539,11 @@
 
 	<path name="gain-loopback_packet-2nd-mic">
 		<ctl name="IN2L Volume" value="0" />
-		<ctl name="IN2L Digital Volume" value="142" />
+		<ctl name="IN2L Digital Volume" value="132" />
 	</path>
 
 	<path name="gain-loopback_packet-headset-mic">
-		<ctl name="IN1L Volume" value="16" />
+		<ctl name="IN1L Volume" value="19" />
 		<ctl name="IN1L Digital Volume" value="121" />
 	</path>
 
@@ -1538,6 +1557,24 @@
 		<ctl name="IN3L Digital Volume" value="138" />
 		<ctl name="IN2L Volume" value="0" />
 		<ctl name="IN2L Digital Volume" value="138" />
+	</path>
+
+	<!-- Realtime Loopback Input -->
+	<path name="gain-realtimeloopback-mic">
+		<ctl name="IN3L Digital Volume" value="88" />
+	</path>
+
+	<path name="gain-realtimeloopback-2nd-mic">
+		<ctl name="IN2L Volume" value="0" />
+		<ctl name="IN2L Digital Volume" value="122" />
+	</path>
+
+	<path name="gain-realtimeloopback-headset-mic">
+		<ctl name="IN1L Volume" value="24" />
+		<ctl name="IN1L Digital Volume" value="80" />
+	</path>
+
+	<path name="gain-realtimeloopback-bt-sco-headset-in">
 	</path>
 
 	<!-- TTY Mode Input volume -->

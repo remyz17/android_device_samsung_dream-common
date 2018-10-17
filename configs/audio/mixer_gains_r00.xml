@@ -611,7 +611,6 @@
 	<path name="gain-camcorder-mic">
 		<ctl name="IN1L Volume" value="32" />
 		<ctl name="IN1L Digital Volume" value="128" />
-
 		<ctl name="IN2L Volume" value="32" />
 		<ctl name="IN2L Digital Volume" value="128" />
 	</path>
@@ -652,7 +651,6 @@
 	<path name="gain-recording-jam-mic">
 		<ctl name="IN1L Volume" value="32" />
 		<ctl name="IN1L Digital Volume" value="128" />
-
 		<ctl name="IN2L Volume" value="32" />
 		<ctl name="IN2L Digital Volume" value="128" />
 	</path>
@@ -666,7 +664,6 @@
 	<path name="gain-interview-mic">
 		<ctl name="IN1L Volume" value="32" />
 		<ctl name="IN1L Digital Volume" value="152" />
-
 		<ctl name="IN2L Volume" value="32" />
 		<ctl name="IN2L Digital Volume" value="152" />
 	</path>
@@ -1266,6 +1263,7 @@
 	<path name="gain-incall_nb-handset-mic">
 		<ctl name="IN1L Volume" value="32" />
 		<ctl name="IN1L Digital Volume" value="128" />
+
 		<ctl name="IN2L Volume" value="32" />
 		<ctl name="IN2L Digital Volume" value="128" />
 	</path>
@@ -1273,6 +1271,7 @@
 	<path name="gain-incall_nb-speaker-mic">
 		<ctl name="IN1L Volume" value="32" />
 		<ctl name="IN1L Digital Volume" value="128" />
+
 		<ctl name="IN2L Volume" value="32" />
 		<ctl name="IN2L Digital Volume" value="128" />
 	</path>
@@ -1437,7 +1436,6 @@
 	<path name="gain-echo_test-dualmic">
 		<ctl name="IN1L Volume" value="32" />
 		<ctl name="IN1L Digital Volume" value="128" />
-
 		<ctl name="IN2L Volume" value="32" />
 		<ctl name="IN2L Digital Volume" value="128" />
 	</path>

@@ -1940,10 +1940,5 @@
 	</path>
 
 	<path name="codec_rx_mute">
-		<param name="HPOUT2 Digital Switch" id="0" />
-		<param name="HPOUT2 Digital Switch" id="1" />
-		<param name="HPOUT3 Digital Switch" id="0" />
-		<param name="HPOUT3 Digital Switch" id="1" />
-		<param name="SPK Enable Switch" id="0" />
 	</path>
 </mixer>
