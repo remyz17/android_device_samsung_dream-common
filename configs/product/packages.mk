@@ -31,3 +31,7 @@ PRODUCT_PACKAGES += \
 
 PRODUCT_PACKAGES += \
     libinit_sec
+
+# HIDL Manifest
+PRODUCT_COPY_FILES += \
+    $(LOCAL_PATH)/manifest.xml:$(TARGET_COPY_OUT_VENDOR)/manifest.xml
